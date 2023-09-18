@@ -1,33 +1,12 @@
-# Ler três números inteiros
-numero1 = int(input("Digite o primeiro número inteiro: "))
-numero2 = int(input("Digite o segundo número inteiro: "))
-numero3 = int(input("Digite o terceiro número inteiro: "))
+#6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
+#Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
+#a partir da soma dos anteriores. Exemplo:
+#• 1 + 1 = 2, terceiro termo;
+#• 1 + 2 = 3, quarto termo, etc.)
 
-# Encontrar o menor, o meio e o maior valor
-if numero1 <= numero2 and numero1 <= numero3:
-    menor = numero1
-    if numero2 <= numero3:
-        meio = numero2
-        maior = numero3
-    else:
-        meio = numero3
-        maior = numero2
-elif numero2 <= numero1 and numero2 <= numero3:
-    menor = numero2
-    if numero1 <= numero3:
-        meio = numero1
-        maior = numero3
-    else:
-        meio = numero3
-        maior = numero1
-else:
-    menor = numero3
-    if numero1 <= numero2:
-        meio = numero1
-        maior = numero2
-    else:
-        meio = numero2
-        maior = numero1
+for x in range(3):
+    for y in range(3):
+        print({x+y})
 
-# Imprimir os números em ordem crescente
-print("Números em ordem crescente:", menor, meio, maior)
+
+    

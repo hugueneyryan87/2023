@@ -3,44 +3,75 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
-def questao01():
-    pass
-
-#2. Faça um programa que imprima todos os números pares de 100 até 1.
-def questao02():
-    pass
-
+def q01():
+    for x in range(1,101):
+        print(x)
+        #2. Faça um programa que imprima todos os números pares de 100 até 1.
+def q02():
+    for x in range(2,101,2):
+        print(x)
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
-def questao03():
-    pass
-
+def q03():
+    x=1
+    while x < 501:
+        if x % 5==0:
+            print(x)
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
-def questao04():
-    pass
-
+def q04():
+    x=1
+    while x <= 20 :
+        print(f'CADASTRO -',x)
+        nome = str(input('Digite UM NOME, Ou Digite Sair Para encerrar cadastro: '))
+        if nome == 'sair':
+            break
+        idade = int(input('Digite A IDADE: '))
+        sexo  = str(input('Digite O SEXO: '))
+        x+=1
+        if idade > 21 and sexo == 'm' or sexo =='M':
+        
+            print({nome , idade , sexo})
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
-def questao05():
-    pass
-
+def q05():
+    anterior=0
+    atual=1
+    soma=0
+    for atual in range(1,6):
+        print(soma)
+        soma = atual+anterior
+        atual+=atual
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
 #a partir da soma dos anteriores. Exemplo:
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
-def questao06():
-    pass
-
+def q06():
+    anterior=0
+    atual=1
+    for x in range(20):
+        print(atual)
+        proximo=anterior+atual
+        anterior=atual
+        atual=proximo
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
-def questao07():
-    pass
-
+def q07():
+    cont = 1
+    mediageral = 0
+    while cont <=3:
+        nome = str(input('Digite o Nome do Aluno: '))
+        nota1 = float(input('Digite a Primeira Nota: '))
+        nota2 = float(input('Digite a Segunda Nota: '))
+        cont+=1
+        media=(nota1 + nota2)/2
+        print(f'{nome}, {nota1}, {nota2}, {media}')
+        mediageral = mediageral+media
+    print(f'Media da turma{mediageral/3}')
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -48,9 +79,26 @@ def questao07():
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
-def questao08():
-    pass
-
+def q08():
+    cont = 1
+    while cont <= 2:
+        nome=str(input('Digite um nome: '))
+        cont+=1
+        if nome == 'Sair':
+            break
+        salario = float(input('Digite O SALARIO: '))
+        if salario <=1300:
+            print('<< Isento >>: ')
+        elif salario >= 1300 and salario <= 2300:
+            total= (salario -(salario - 0.10)/100)
+            subtrair = salario - total
+            print(f'Com R$ {salario}, {nome}, Menos 10% {salario- ((salario - 0.10)/100):.2f}')
+            print(f'Total de {subtrair :.2f} de Desconto do IRRF:')
+        elif salario >= 2300:
+            total=(salario-(salario - 0.15)/100)
+            subtrair = salario - total
+            print(f'Com R$ {salario}, {nome}, Menos 15% {salario- ((salario - 0.15)/100):.2f}')
+            print(f'Total de {subtrair :.2f} de Desconto do IRRF:')    
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
 #a um questionário no qual constava sua idade e a sua opinião em relação ao filme:
@@ -60,9 +108,31 @@ def questao08():
 #• A quantidade de pessoas que responderam regular;
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
-def questao09():
-    pass
-
+def q09():
+    cont = 1
+    soma_idade=0
+    cont_regular=0
+    cont_bom=0
+    while cont <= 5:
+        idade = int(input('Digite a IDADE: '))
+        print('Dê Sua Avaliação Sobre o Filme: ')
+        print('1 Para EXCELENTE:')
+        print('2 Para BOM: ')
+        print('3 Para REGULAR: ')
+        cont+=1
+        nota = int(input('NOTA :>> '))
+        if nota == 0 or nota >3:
+            print('NOTA INVALIDA:')
+            break
+        if nota == 1:
+            soma_idade = idade + soma_idade
+        if nota == 3:
+            cont_regular+=1
+        if nota == 2:
+            cont_bom+=1
+    print(f'A média das idades das pessoas que responderam excelente é de: {soma_idade/5}')
+    print(f'A quantidade de pessoas que responderam regular foi de: {cont_regular}')
+    print(f'{(cont_bom*100)/100} % BOM entre todos os expectadores analisados.')
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -77,16 +147,35 @@ def questao10():
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
-def questao11():
-    pass
+def q11():
+    cont=0
+    numero=''
+    while numero !=0:
+        numero= int(input('Digite Um numero ou 0 Para parar: '))
+        if numero > 100 and numero <200:
+            cont+=1
+        
+    print(f'Voce Digitou {cont} de Numeros entre 100 e 200: ')        
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
-def questao12():
-    pass
+def q12():
+    paisA =5000000
+    paisB =7000000
+    ano =0
+    total_paisA =''
+    total_paisB =''
+    while total_paisA < total_paisB:
+        
+        total_paisA =(paisA+(paisA + 0.3)/100)
+        total_paisB =(paisB+(paisB + 0.2)/100)
+        ano+=1
+        if total_paisA > total_paisB:
+            print(f'Será Preciso {ano} Anos, Para o Pais A ser Maior que Pais B: ')
 
+#total=(salario-(salario - 0.15)/100)
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
 #• número do consumidor
@@ -103,15 +192,27 @@ def questao12():
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
-def questao14():
-    pass
+def q14():
+    atual =''
+    anterior =''
+    while numero >=1:
+        numero = int(input('Digite Um Numero: '))
+        anterior = numero
+        atual = anterior *numero
+    print(atual)
+
+  #for x in range(20):
+   #     print(atual)
+    #    proximo=anterior+atual
+     #   anterior=atual
+      #  atual=proximo
+
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
-def questao15():
-    pass
+
 
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
@@ -290,3 +391,27 @@ def questao16():
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
 
+opcao = int(input('Digite o número da questão: '))
+match opcao:
+    case 1: q01()
+    case 2: q02()
+    case 3: q03()
+    case 4: q04()
+    case 5: q05()
+    case 6: q06()
+    case 7: q07()
+    case 8: q08()
+    case 9: q09()
+    case 10: q10()
+    case 11: q11()
+    case 12: q12()
+    case 13: q13()
+    case 14: q14()
+    case 15: q15()
+    case 16: q16()
+    case 17: q17()
+    case 18: q18()
+    case 20: q20()
+    case 21: q21()
+    case 22: q22()
+    case 23: q23()
