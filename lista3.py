@@ -212,6 +212,20 @@ def q14():
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
+def q15():
+    cont_menos=0
+    cont_mais=0
+    idade = ''
+    while idade !=0:
+        idade = int(input('Digite Idade, Ou 0 Para SAIR: '))
+        if idade ==0:
+            break
+        if idade < 21:
+            cont_menos +=1
+        elif idade > 50:
+            cont_mais +=1
+    print(f'São {cont_menos} Pessoas, com Menos de 21 ANOS:  ')                    
+    print(f'São {cont_mais} Pessoas, com Menos de 50 ANOS:  ')
 
 
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
@@ -227,8 +241,23 @@ def q14():
 #  5 é o Divisor
 #  2 é o Quociente (resultado inteiro da divisão)
 #  0 é o Resto da Divisão
-def questao16():
-    pass
+def q16():
+    resto =''
+    resultado=''
+    cont=1
+    numero = float(input('Digite um Numero: '))
+    divisor = float(input('Digite O dividendo: '))
+    resto = numero % divisor
+    resultado = numero / divisor
+    print(resultado)
+    while resultado > resto: 
+        resultado = numero / divisor:
+        resto = numero % divisor:
+
+        cont+=1
+    print(cont)    
+
+    
 
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
