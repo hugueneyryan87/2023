@@ -16,10 +16,10 @@ def q02():
 
 #3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 def q03():
-    num = float(input('Digite Um numero: '))
-    num2 = float(input('Ddigite segundo Numero: '))
-    num3 = float(input('Digite terceiro numero: '))
-    resultado = (num + num2 + num3) / 3
+    num = 5 
+    num2 = 8
+    num3 = 12
+    resultado =(num + num2 + num) / 3
     print(resultado)
 
 #4. Faça um programa que leia e imprima um número inteiro.
@@ -191,7 +191,7 @@ def q19():
 def q20():
     cotacao = float(input("digite o valor do dolar atual :"))
     dolar = float(input("Digite o valor em Dolar :"))
-    print(f'O valor da conversao de Dolar ara Real é: {cotacao/dolar}')
+    print(f'O valor da conversao de Dolar ara Real é: {cotacao/dolar}') 
     
 
-q07()
+q03()

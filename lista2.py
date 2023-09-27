@@ -446,8 +446,10 @@ def q23():
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
-#faça um programa que, a partir da leitura da placa do carro, informe o mês
+#faça um programa que, a partir da leitura da placa do carro, informe o mês sa
 #em que o emplacamento deve ser renovado.
+def q24():
+    
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,

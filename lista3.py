@@ -21,7 +21,7 @@ def q03():
 #e tiver mais de 21 anos.
 def q04():
     x=1
-    while x <= 20 :
+    while x <= 20:
         print(f'CADASTRO -',x)
         nome = str(input('Digite UM NOME, Ou Digite Sair Para encerrar cadastro: '))
         if nome == 'sair':
@@ -165,17 +165,14 @@ def q12():
     paisA =5000000
     paisB =7000000
     ano =0
-    total_paisA =''
-    total_paisB =''
-    while total_paisA < total_paisB:
+    while paisA < paisB:
         
-        total_paisA =(paisA+(paisA + 0.3)/100)
-        total_paisB =(paisB+(paisB + 0.2)/100)
+        paisA =paisA + paisA * 0.03
+        paisB =paisB + paisB * 0.02
         ano+=1
-        if total_paisA > total_paisB:
-            print(f'Será Preciso {ano} Anos, Para o Pais A ser Maior que Pais B: ')
+    print(f'Será Preciso {ano} Anos, Para o Pais A {paisA} ser Maior que Pais B: {paisB}')
 
-#total=(salario-(salario - 0.15)/100)
+
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
 #• número do consumidor
@@ -215,7 +212,7 @@ def q14():
 def q15():
     cont_menos=0
     cont_mais=0
-    idade = ''
+    idade = 0
     while idade !=0:
         idade = int(input('Digite Idade, Ou 0 Para SAIR: '))
         if idade ==0:
@@ -251,11 +248,12 @@ def q16():
     resultado = numero / divisor
     print(resultado)
     while resultado > resto: 
-        resultado = numero / divisor:
-        resto = numero % divisor:
+        resultado = numero / divisor
+        resto = numero % divisor
 
         cont+=1
-    print(cont)    
+    print(cont)  
+    pass  
 
     
 
@@ -285,13 +283,15 @@ def q16():
 #• média de cada turma;
 #• percentual de reprovados.
 #Obs.: Considere aprovado comnota >= 7.0
+def q19():
+    pass    
 
 #20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
 #• Qual o seu time de coração?
 #1-Fluminense;
 #2-Botafogo;
 #3-Vasco;
-#4-Flamengo;
+#4-Palmeiras;
 #5-Outros
 #• Onde você mora?
 #1-RJ;
@@ -306,6 +306,76 @@ def q16():
 #• o número de pessoas de Niterói torcedoras do Fluminense
 #3.12. Exercícios da Aula 73
 #Obs.: O programa encerra quando se digita 0 para o time.
+def q20():
+    cont_flu = 0
+    cont_fogo = 0
+    cont_vasco = 0
+    cont_palme = 0
+    cont_rj = 0
+    cont_niteroi = 0
+    cont_outros = 0
+    cont_times_outros = 0
+    torcedor_outros = 0
+    flu_niteroi = 0
+    time = ''
+    cidade = ''
+    while time != '0':
+        time = str(input('Qual o Seu time do Coração: '))
+        if time == 'fluminense':
+            cont_flu += 1
+        if time == 'botafogo':
+            cont_fogo += 1
+        if time == 'vasco':
+            cont_vasco += 1
+        if time == 'palmeiras':
+            cont_palme += 1
+        if time == 'outros':
+            cont_times_outros +=1    
+        cidade = str(input('Qual cidade Você Mora: Rj , Niteroi , Outros: '))
+        if cidade =='rj':
+            cont_rj += 1
+        if cidade == 'niteroi':
+            cont_niteroi += 1
+        if cidade == 'outros':
+            cont_outros += 1
+            salario = float(input('Qual Seu Salario: '))
+        if cont_flu >0:
+            print(f'{cont_flu} São torcedore do Fluminense: ')
+        if cont_fogo >0:
+            print(f'{cont_fogo} São tordedores do Botafogo: ')
+        if cont_vasco >0:
+            print(f'{cont_vasco} São tordedores do Botafogo: ')
+        if cont_palme > 0:
+            print(f'{cont_palme} São tordedores do Palmeiras: ')
+        if time == 'botafogo':
+            media_salario = salario / cont_fogo
+        if cidade == 'rj' and time == 'outros':
+            torcedor_outros +=1
+        if time == 'fluminense' and cidade == 'niteroi':    
+            flu_niteroi += 1
+    print(f'Torcedores do Fluminense {cont_flu}')
+    print(f'Torcedores do Botafogo {cont_fogo}')
+    print(f'Torcedores do Palmeiras {cont_vasco}')
+    print(f'Torcedores do Palmeiras {cont_palme}')
+    print(f'Torcedores Outros  {cont_times_outros}')
+    print(f'A Média Do Salarios dos Botafoguense: {media_salario}')
+    print(f'Pessoas que mora no Rio de Janeiro  e Torce para outros Times: {torcedor_outros}')
+    print(f'As pessoas que mora em Nitéroi e Torce para o Fluminense: {flu_niteroi}')
+#• o número de torcedores por clube;
+#• a média salarial dos torcedores do Botafogo;
+#• o número de pessoas moradoras do Rio de Janeiro, torcedores de outros
+#clubes;
+#• o número de pessoas de Niterói torcedoras do Fluminense
+#3.12. Exercícios da Aula 73
+#Obs.: O programa encerra quando se digita 0 para o time.            
+
+    
+
+    
+                    
+
+
+
 
 #21. Emuma universidade cada aluno possui os seguintes dados:
 #• Renda pessoal;
@@ -440,7 +510,9 @@ match opcao:
     case 16: q16()
     case 17: q17()
     case 18: q18()
+    case 19: q19()
     case 20: q20()
     case 21: q21()
     case 22: q22()
     case 23: q23()
+        

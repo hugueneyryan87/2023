@@ -1,7 +1,3 @@
-numero = 5
-
-while numero <= 501:
-    if numero %5 == 0:
-        print(numero)
-    
-    
+total_paisA =((paisA +0.3)/100)
+total_paisB =(paisB+(paisB +0.2)/100)
+print(total_paisA) 

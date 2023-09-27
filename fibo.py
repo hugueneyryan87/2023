@@ -6,7 +6,7 @@
 #• A média das idades das pessoas que responderam excelente;
 #• A quantidade de pessoas que responderam regular;
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
-#analisados.
+#analisados. 
 cont = 1
 soma_idade=0
 cont_regular=0
