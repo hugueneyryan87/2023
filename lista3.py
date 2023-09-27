@@ -1,6 +1,9 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
+
+
 '''
+
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
 def q01():
@@ -137,7 +140,7 @@ def q09():
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
 #
-#• O peso médio e a idade média de cada um dos times;
+#• O peso médio e a idade média de cada um dos paises;
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
@@ -190,19 +193,22 @@ def q12():
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
 def q14():
-    atual =''
-    anterior =''
-    while numero >=1:
-        numero = int(input('Digite Um Numero: '))
-        anterior = numero
-        atual = anterior *numero
-    print(atual)
-
-  #for x in range(20):
-   #     print(atual)
-    #    proximo=anterior+atual
-     #   anterior=atual
-      #  atual=proximo
+    numero = 0
+    seguinte = 0
+    atual = 0
+    while numero !=0:
+        numero = int(input('Digite Varios numeros ou 0 p/ SAIR: '))
+        seguinte = numero * seguinte
+        print(seguinte)
+        atual = seguinte
+               
+ #anterior=0
+  #  atual=1
+   # for x in range(20):
+    #    print(atual)
+     #   proximo=anterior+atual
+      #  anterior=atual
+       # atual=proximo
 
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
@@ -260,12 +266,13 @@ def q16():
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
 #• número de pedido
-#72 Aula 3. Estruturas de Iteração
 #• data do pedido (dia, mês, ano)
 #• preço unitário
 #• quantidade
 #O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
 #como número do pedido.
+def q17():
+    pedido = int(input('Numero do pedido: '))
 
 #18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
 #serviços diários de:
@@ -319,7 +326,7 @@ def q20():
     flu_niteroi = 0
     time = ''
     cidade = ''
-    while time != '0':
+    while time == '0':
         time = str(input('Qual o Seu time do Coração: '))
         if time == 'fluminense':
             cont_flu += 1
@@ -355,7 +362,7 @@ def q20():
             flu_niteroi += 1
     print(f'Torcedores do Fluminense {cont_flu}')
     print(f'Torcedores do Botafogo {cont_fogo}')
-    print(f'Torcedores do Palmeiras {cont_vasco}')
+    print(f'Torcedores do Vasco  {cont_vasco}')
     print(f'Torcedores do Palmeiras {cont_palme}')
     print(f'Torcedores Outros  {cont_times_outros}')
     print(f'A Média Do Salarios dos Botafoguense: {media_salario}')
