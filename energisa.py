@@ -54,12 +54,13 @@ dm = ((resultadoFF * divisaoDASPrimaria * resultadoTrasnformador * fatordepotenc
 print(f'DM >>>:{dm:.2f}')
 demanda = float(input(f'CAMPO 16: '))
 y = resultadoTrasnformador * demanda
+if dm > y :
+    x = dm / y
+    r = x *100
+    s = r - 100
+    print(f'Porcentagem de ERROR Final: {s:2f}')  
 if y > dm :
-    resultadoDM = (y/demanda) 
-    print(f'Porcentagem de Error: {resultadoDM:2f}')
-elif dm > y :
-    resultadoDM = (demanda/y)
-    print(f'Porcentagem de Error: {resultadoDM:2f}')
-
-x = (((dm / demanda )*100)-100)
-print(f'Porcentagem de ERROR Final: {x:2f}')     
+    x = y/ dm
+    r = x *100
+    s = r - 100
+    print(f'Porcentagem de ERROR Final: {s:2f}')     
