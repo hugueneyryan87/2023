@@ -48,7 +48,7 @@ def percent_error(dm: float, demanda: float, resultadoTrasnformador: float) -> f
         r = x * 100
         s = r - 100
         return s
-    if y > dm:
+    elif y > dm:
         x = y / dm
         r = x * 100
         s = r - 100

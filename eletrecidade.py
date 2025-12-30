@@ -59,8 +59,10 @@ if dm > y :
     r = x *100
     s = r - 100
     print(f'Porcentagem de ERROR Final: {s:2f}')  
-if y > dm :
+elif y > dm :
     x = y/ dm
     r = x *100
     s = r - 100
-    print(f'Porcentagem de ERROR Final: {s:2f}')    
+    print(f'Porcentagem de ERROR Final: {s:2f}')
+else:
+    print('Porcentagem de ERROR Final: 0.00')
